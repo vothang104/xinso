@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --white-color: #ffffff;
+    --black-color: #000;
+    --primary-color: rgb(247, 101, 191);
+
+    --height-slider: 600px;
+    --height-header: 46px;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.grid{
+    width: 100%;
+    margin: 0 auto;
+}
+.grid__row{
+    padding: 0 -12px;
+}
+/*animation*/
+@keyframes fadeInGrowth {
+    from{
+        opacity: 0.4;
+        transform: scale(0.4);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+/*btn*/
+.btn{
+    max-width: 108px;
+    min-width: 70px;
+    height: 38px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+    outline: none;
+    border: 1px solid var(--black-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+/*_______________________________________modal________________________________________*/
+.modal{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0,0,0, 0.2);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    
+}
+.modal-open{
+    display: flex;
+}
+.modal-container{
+    width: 60%;
+    min-height: 30%;
+    max-height: 70%;
+    background-color: #fff;
+    border-radius: 3px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: modalFadeIn ease-in 0.2s;
+}
+@keyframes modalFadeIn {
+    from{
+        transform: translateY(-100px);
+        opacity: 0.3;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
